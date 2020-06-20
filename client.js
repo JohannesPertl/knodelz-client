@@ -11,42 +11,86 @@ $(function () {
     var status = $("#status");
 
     var token = ""
-    // REST
-    var restUrl = "localhost:8080"
 
+    // REST
     $(document).on("click", "#createButton", function () {
         var username = $("#username");
         var password = $("#password");
-        // alert(username.value)
 
         $.ajax({
             type: 'post',
-            url: 'http://localhost:8080/user',
-            data: {name: "joe", password: "test123"},
-            dataType: "html",
+            url: 'http://localhost:8080/api/user',
+            data: {name: username.val(), password: password.val()},
+            dataType: "json",
             xhrFields: {
                 withCredentials: false
             },
             headers: {},
             success: function (data) {
-                console.log("Created new user");
-                console.log(data);
-                // console.log(JSON.parse(data).id);
-                location.href="game.html"
+                $.ajax({
+                    type: 'post',
+                    url: 'http://localhost:8080/api/login',
+                    data: {name: username.val(), password: password.val()},
+                    dataType: "json",
+                    xhrFields: {
+                        withCredentials: false
+                    },
+                    headers: {},
+                    success: function (data) {
+                        console.log("Successful");
+                        token = data.token
+                    },
+                    error: function () {
+                        alert("Nono!");
+                    }
+                });
             },
             error: function () {
-                console.log('Sorry...');
+                alert("Nono!");
             }
+        });
+
+        $(document).on("click", "#loginButton", function () {
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:8080/api/login',
+                data: {name: username.val(), password: password.val()},
+                dataType: "json",
+                xhrFields: {
+                    withCredentials: false
+                },
+                headers: {},
+                success: function (data) {
+                    console.log("Successful");
+                    token = data.token
+                },
+                error: function () {
+                    alert("Nono!");
+                }
+            });
+
         });
 
 
         // $.post(
-        //     "http://localhost:8080/user",
+        //     "http://localhost:8080/api/user",
         //     {name: "joe", password: "test123"},
-        //     function (data, status, xhr) {
-        //         alert("fuckoff")
+        //     success: function (data, status, xhr) {
+        //         alert("test")
         //     });
+
+        // $.get(url, function (data) {
+        //
+        //     console.log( "Read latest ID ");
+        //     console.log(data);
+        //
+        // });
+
     });
+
+
+
+
 
 
     // Websocket
@@ -69,7 +113,7 @@ $(function () {
     // WebSocket Event open and EventHandler onOpen
     connection.onopen = function () {
 
-        // TODO: do something once connection has been established
+        // // TODO: do something once connection has been established
         // var msg = {
         //   type: "authenticate",
         //   payload: {
@@ -78,10 +122,10 @@ $(function () {
         //     intention: "brush",
         //   },
         // };
-        //
-        //
-        //
-        // connection.send(JSON. stringify(msg));
+
+
+
+        connection.send(JSON. stringify(msg));
     };
 
 
@@ -90,8 +134,7 @@ $(function () {
         var msg = {
             type: "authenticate",
             payload: {
-                token:
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMWM3NTljMC1hOTk1LTExZWEtYTVmYS05MzBjMWUxMjU0ZDAiLCJpYXQiOjE1OTIzMjYwNTB9.pcq62VlD1i4MceeSXL4WaHHgwWPgPcmVGGVzrwcnaGg",
+                token: token,
                 intention: "feed",
             },
         };
