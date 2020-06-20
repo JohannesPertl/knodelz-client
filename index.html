@@ -2,11 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>WebSocket - Simple chat</title>
+    <title>Knodelz - Multiplayer Tamagotchi</title>
+    <link rel="stylesheet" type="text/css" href="client_style.css">
   </head>
   <body>
-    <h1>Just some data in the console!</h1>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="minimal-client.js"></script>
+    <h1><img src="src/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
+    <div class="Image">
+    <img src="src/knodus_neutral.png" alt="Knodus"style="height: 350px">
+    </div>
+
+      <button id="feedButton" type="button" onclick="feedKnodel()">FEED</button>
+      <button id="brushButton" type="button" onclick="brushKnodel()">BRUSH</button>
+
+
+
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <script src="client.js"></script>
   </body>
 </html>

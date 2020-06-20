@@ -1,10 +1,11 @@
-/**
+/*
+/!**
  * extended base from websocket example
  * simplified some parts and extended with API call to receive token
  * for later token authentication at sending messages
- */
+ *!/
 
-$(function () {
+$ (function () {
   "use strict";
 
   // for better performance - to avoid searching in DOM
@@ -16,7 +17,7 @@ $(function () {
   status.text("Connecting ...");
 
   // if user is running mozilla then use it's built-in WebSocket
-  window.WebSocket = window.WebSocket || window.MozWebSocket;
+  window.WebSocket = window.WebSocket
 
   // if browser doesn't support WebSocket, just show some notification and exit
   if (!window.WebSocket) {
@@ -84,9 +85,9 @@ $(function () {
   };
 
 
-  // /**
+  // /!**
   //  * Send message when user presses Enter key
-  //  */
+  //  *!/
   // input.keydown(function (e) {
   //   if (e.keyCode === 13) {
   //     var msg = $(this).val();
@@ -110,11 +111,11 @@ $(function () {
   //   }
   // });
 
-  /**
+  /!**
    * This method is optional. If the server wasn't able to
    * respond to the request in 3 seconds then show some error message
    * to notify the user that something is wrong.
-   */
+   *!/
   setInterval(function () {
     if (connection.readyState !== 1) {
       status.text("Error");
@@ -122,9 +123,9 @@ $(function () {
     }
   }, 3000);
 
-  // /**
+  // /!**
   //  * Add message to the chat window
-  //  */
+  //  *!/
   // function addMessage(message, dt) {
   //   console.log(message);
   //   content.prepend(
@@ -139,3 +140,4 @@ $(function () {
   // }\
 
 });
+*/
