@@ -32,6 +32,7 @@ $(function () {
                 console.log("Created new user");
                 console.log(data);
                 // console.log(JSON.parse(data).id);
+                location.href="game.html"
             },
             error: function () {
                 console.log('Sorry...');
