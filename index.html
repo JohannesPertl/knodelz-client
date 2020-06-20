@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Knodelz - Multiplayer Tamagotchi</title>
-    <link rel="stylesheet" type="text/css" href="client_style.css">
+    <link rel="stylesheet" type="text/css" href="client_style_auth.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="client.js"></script>
   </head>
   <body>
     <h1><img src="src/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
-    <div class="Image">
-    <img src="src/knodus_neutral.png" alt="Knodus"style="height: 350px">
-    </div>
+    <form>
+      <label for="groupName">Group Name:</label><br>
+      <input type="text" id="groupName" name="groupName"><br>
+      <label for="passWord">Password:</label><br>
+      <input type="text" id="passWord" name="passWord">
+    </form>
 
-      <button id="feedButton" type="button">FEED</button>
-      <button id="brushButton" type="button">BRUSH</button>
+
 
   </body>
 </html>
