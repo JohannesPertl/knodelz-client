@@ -10,21 +10,41 @@ $(function () {
     var input = $("#input");
     var status = $("#status");
 
-    var username = $("#username");
-    var password = $("#password");
-
     var token = ""
     // REST
     var restUrl = "localhost:8080"
 
     $(document).on("click", "#createButton", function () {
-        // alert("test")
-        $.post(
-            restUrl + "/user",
-            {name: username, password: password},
-            function (data, status, xhr) {
-                // alert(data)
-            });
+        var username = $("#username");
+        var password = $("#password");
+        // alert(username.value)
+
+        $.ajax({
+            type: 'post',
+            url: 'http://localhost:8080/user',
+            data: {name: "joe", password: "test123"},
+            dataType: "html",
+            xhrFields: {
+                withCredentials: false
+            },
+            headers: {},
+            success: function (data) {
+                console.log("Created new user");
+                console.log(data);
+                // console.log(JSON.parse(data).id);
+            },
+            error: function () {
+                console.log('Sorry...');
+            }
+        });
+
+
+        // $.post(
+        //     "http://localhost:8080/user",
+        //     {name: "joe", password: "test123"},
+        //     function (data, status, xhr) {
+        //         alert("fuckoff")
+        //     });
     });
 
 
