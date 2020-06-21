@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="client_style_game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="client.js"></script>
+    <script>
+      $(function () {
+        $("#foodValue").html(localStorage.get("food"))
+        $("#brushValue").html(localStorage.get("brushy"))
+      });
+    </script>
 </head>
 <body>
     <h1><img src="src/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
