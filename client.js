@@ -172,6 +172,6 @@ $(function () {
             console.log("Server is down, refreshing page..");
             location.reload()
         }
-    }, 10000);
+    }, 5000);
 
 });
