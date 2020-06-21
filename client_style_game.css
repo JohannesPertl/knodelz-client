@@ -1,16 +1,23 @@
 body {
     background-color:#383736;
     text-align: center;
+    color:#33cc33;
+    font-family: Helvetica;
+    font-size: 25px;
+
+
 }
+
 
 h1 {
     height: auto;
     text-align: center;
 }
 
-.Image {
 
-    text-align: center;
+
+#brushIcon {
+  margin-left: 100px;
 }
 
 button {
