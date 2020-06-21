@@ -6,40 +6,11 @@
     <link rel="stylesheet" type="text/css" href="client_style_auth.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="client.js"></script>
-<!--    <script>-->
-<!--        $(function () {-->
-<!--            // for better performance - to avoid searching in DOM-->
-<!--            var content = $("#content");-->
-<!--            var input = $("#input");-->
-<!--            var status = $("#status");-->
-
-<!--            var token = ""-->
-
-
-<!--            // REST-->
-<!--            $(document).on("click", "#createButton", function () {-->
-<!--                var username = $("#username");-->
-<!--                var password = $("#password");-->
-<!--                // alert(username.value)-->
-
-
-<!--                $.post(-->
-<!--                    "http://localhost:8080/api/user",-->
-<!--                    {name: "joe", password: "test123"},-->
-<!--                    function (data, status, xhr) {-->
-<!--                        alert("test")-->
-<!--                    });-->
-
-<!--                // $.get(url, function (data) {-->
-<!--                //-->
-<!--                //     console.log( "Read latest ID ");-->
-<!--                //     console.log(data);-->
-<!--                //-->
-<!--                // });-->
-
-<!--            });-->
-<!--        });-->
-<!--    </script>-->
+    <script>
+        if (localStorage.getItem("token")){
+            window.location.replace("game.html")
+        }
+    </script>
 </head>
 <body>
 <h1><img src="src/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
