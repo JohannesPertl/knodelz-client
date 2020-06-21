@@ -5,7 +5,7 @@
     <title>Knodelz - Multiplayer Tamagotchi</title>
     <link rel="stylesheet" type="text/css" href="client_style_game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="client.js"></script>
+    <script src="game.js"></script>
     <script>
       $(function () {
         $("#foodValue").html(localStorage.getItem("food"))
@@ -14,17 +14,17 @@
     </script>
 </head>
 <body>
-    <h1><img src="src/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
+    <h1><img src="media/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
 
-    <img id="foodIcon" src="src/food_icon.png" alt="Knodus"style="height: 70px;">
+    <img id="foodIcon" src="media/food_icon.png" alt="Knodus" style="height: 70px;">
     <p id=foodValue> foodValue </p>
 
 
-    <img id="brushIcon" src="src/brush_icon.png" alt="Knodus"style="height: 70px">
+    <img id="brushIcon" src="media/brush_icon.png" alt="Knodus" style="height: 70px">
     <p id=brushValue> brushValue </p>
 
     <div id="Image">
-        <img src="src/knodus_neutral.png" alt="Knodus"style="height: 350px">
+        <img src="media/knodus_neutral.png" alt="Knodus" style="height: 350px">
     </div>
 
     <button id="feedButton" type="button">FEED</button>

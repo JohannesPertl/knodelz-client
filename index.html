@@ -6,7 +6,7 @@
     <title>Knodelz - Multiplayer Tamagotchi</title>
     <link rel="stylesheet" type="text/css" href="client_style_auth.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="client.js"></script>
+    <script src="auth.js"></script>
     <script>
         if (localStorage.getItem("token")){
             window.location.replace("game.html")
@@ -14,7 +14,7 @@
     </script>
 </head>
 <body>
-<h1><img src="src/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
+<h1><img src="media/logo.png" alt="Knodelz logo" style="height: 100px"></h1>
 <form>
     <label for="username">username:</label>
     <input type="text" id="username" name="username"><br>
