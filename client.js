@@ -133,7 +133,10 @@ $(function () {
             var json = JSON.parse(message.data);
 
             $("#foodValue").html(json.food)
-            $("#brushValue").html(json.brush)
+            $("#brushValue").html(json.brushy)
+
+            localStorage.setItem("food", json.food)
+            localStorage.setItem("brushy", json.brushy)
 
             console.log(json)
 
