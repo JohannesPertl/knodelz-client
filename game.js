@@ -14,7 +14,6 @@ $(function () {
         return;
     }
 
-    // TODO don't forget to use secure connection with e.g. ssl
     // open connection
     let connection = new WebSocket("ws://" + server + "/ws");
 
@@ -69,7 +68,7 @@ $(function () {
 
     // WebSocket Event message and EventHandler onMessage
     connection.onmessage = function (message) {
-        console.log("onmessage");
+        console.log("Updating knodel stats");
 
         try {
             let json = JSON.parse(message.data);
@@ -94,7 +93,7 @@ $(function () {
 
     /**
      * If the server wasn't able to
-     * respond to the request in 10 seconds,
+     * respond to the request in 5 seconds,
      * then refresh the page to reset connection
      */
     setInterval(function () {

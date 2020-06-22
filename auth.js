@@ -29,15 +29,15 @@ $(function () {
                     success: function (data) {
                         console.log("Successful");
                         localStorage.setItem('token', data.token)
-                        location.replace("http://" + server + "/game.html")
+                        location.replace("game.html")
                     },
                     error: function () {
-                        alert("Nono!");
+                        alert("Login failed");
                     }
                 });
             },
             error: function () {
-                alert("Nono!");
+                alert("Signup failed");
             }
         });
 
@@ -53,10 +53,10 @@ $(function () {
                 headers: {},
                 success: function (data) {
                     console.log("Successful");
-                    location.replace("http://" + server + "/game.html")
+                    location.replace("game.html")
                 },
                 error: function () {
-                    alert("Nono!");
+                    alert("Login failed");
                 }
             });
 

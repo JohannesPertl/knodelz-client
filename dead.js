@@ -15,7 +15,7 @@ $(function () {
         };
 
         connection.send(JSON.stringify(msg))
-        location.replace("http://" + server + "/game.html")
+        location.replace("game.html")
     })
 
 
@@ -41,7 +41,7 @@ $(function () {
 
     // WebSocket Event message and EventHandler onMessage
     connection.onmessage = function (message) {
-        console.log("onmessage");
+        console.log("Updating knodel stats");
 
         try {
             var json = JSON.parse(message.data);
@@ -49,7 +49,7 @@ $(function () {
             console.log(json)
 
             if (!json.dead) {
-                location.replace("http://" + server + "/game.html")
+                location.replace("game.html")
             }
 
         } catch (e) {
