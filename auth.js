@@ -6,7 +6,7 @@ $(function () {
 
         $.ajax({
             type: 'post',
-            url: 'http://localhost:8080/api/user',
+            url: 'http://knodelz.duckdns.org/api/user',
             data: {name: username.val(), password: password.val()},
             dataType: "json",
             xhrFields: {
@@ -16,7 +16,7 @@ $(function () {
             success: function (data) {
                 $.ajax({
                     type: 'post',
-                    url: 'http://localhost:8080/api/login',
+                    url: 'http://knodelz.duckdns.org/api/login',
                     data: {name: username.val(), password: password.val()},
                     dataType: "json",
                     xhrFields: {
@@ -41,7 +41,7 @@ $(function () {
         $(document).on("click", "#loginButton", function () {
             $.ajax({
                 type: 'post',
-                url: 'http://localhost:8080/api/login',
+                url: 'http://knodelz.duckdns.org/api/login',
                 data: {name: username.val(), password: password.val()},
                 dataType: "json",
                 xhrFields: {

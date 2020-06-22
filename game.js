@@ -14,7 +14,7 @@ $(function () {
 
     // TODO don't forget to use secure connection with e.g. ssl
     // open connection
-    let connection = new WebSocket("ws://127.0.0.1:8080/ws");
+    let connection = new WebSocket("ws://knodelz.duckdns.org:8080/ws");
 
 
     // WebSocket Event open and EventHandler onOpen
