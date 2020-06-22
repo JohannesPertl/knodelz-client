@@ -4,6 +4,8 @@
  * for later token authentication at sending messages
  */
 
+server = "localhost:8080"
+
 $(function () {
 
     // if browser doesn't support WebSocket, just show some notification and exit
@@ -14,7 +16,7 @@ $(function () {
 
     // TODO don't forget to use secure connection with e.g. ssl
     // open connection
-    let connection = new WebSocket("ws://knodelz.duckdns.org:8080/ws");
+    let connection = new WebSocket("ws://" + server + "/ws");
 
 
     // WebSocket Event open and EventHandler onOpen

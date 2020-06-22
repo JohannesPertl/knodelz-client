@@ -1,3 +1,5 @@
+server = "localhost:8080"
+
 
 $(function () {
 
@@ -13,7 +15,7 @@ $(function () {
         };
 
         connection.send(JSON.stringify(msg))
-        location.replace("game.html")
+        location.replace("http://" + server + "/game.html")
     })
 
 
@@ -25,7 +27,7 @@ $(function () {
 
     // TODO don't forget to use secure connection with e.g. ssl
     // open connection
-    let connection = new WebSocket("ws://127.0.0.1:8080/ws");
+    let connection = new WebSocket("ws://" + server + "/ws");
 
 
     // WebSocket Event open and EventHandler onOpen
@@ -47,7 +49,7 @@ $(function () {
             console.log(json)
 
             if (!json.dead) {
-                location.replace("game.html")
+                location.replace("http://" + server + "/game.html")
             }
 
         } catch (e) {
